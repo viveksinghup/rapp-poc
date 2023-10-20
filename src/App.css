@@ -1,16 +1,85 @@
+:root {
+  --colorBg: #eee;
+  --colorText: #000;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --colorBg: #000;
+    --colorText: #eee;
+  }
+}
+
+/***** App Header ****/
 .app-header{
   padding: 10px;
-  width: 100%;
   background-color: black;
   position: fixed;
   left: 0;
   top: 0;
+  right: 0;
 }
 .logo{
   width: 50px;
 }
+
+/**** Body Container *****/
 .container{
-  padding-top: 70px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 1024px;
+  background-color: #fff;
+}
+@media all and (max-width: 1440px) {
+  .container{
+    width: 800px;
+  }
+}
+
+@media all and (max-width: 800px) {
+  .container{
+    width: 100%;
+  }
+}
+
+/**** Hero Section *****/
+.heroBlock{
+  height: 400px;
+  color: var(--colorText);
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--colorBg);
+}
+.heroBlock img{
+  max-width: 150px;
+}
+
+.container-body{
+  flex: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
+
+
+/**** ticker Section *****/
+.ticker{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: 0.45s;
+  transform: translateY(60px);
+}
+.ticker.show{
+  transform: translateY(0px);
+}
+
